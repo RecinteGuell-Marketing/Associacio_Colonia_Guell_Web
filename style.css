@@ -116,6 +116,8 @@
     color: var(--ink);
   }
   .logo:hover { text-decoration: none; }
+
+/* 
   .logo__mark {
     width: 42px; height: 42px;
     background: var(--accent);
@@ -130,6 +132,14 @@
     letter-spacing: 0.02em;
     font-style: italic;
   }
+*/
+
+  .logo__image {
+    width: 31px;
+    height: 31px;
+    object-fit: contain;
+    display: block;
+}
   .logo__text { line-height: 1.15; }
   .logo__title {
     font-family: var(--serif);
