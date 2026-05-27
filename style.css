@@ -255,13 +255,16 @@
   }
 
   .hero--poster .hero__eyebrow {
-    text-align: center;
-    font-size: clamp(24px, 3vw, 32px);
-    letter-spacing: 0.08em;
-    color: var(--ink);
-    margin-bottom: 36px;
+  font-family: var(--serif);
+  font-weight: 500;
+  text-align: center;
+  font-size: clamp(32px, 4vw, 48px);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink);
+  margin-bottom: 36px;
   }
-
+  
   .ornament {
     display: flex;
     align-items: center;
