@@ -343,8 +343,12 @@
   }
 
   .hero__poster::after {
-    top: -8px; left: -8px;
-    width: 0.5px; height: 32px;
+  top: -8px;
+  left: -8px;
+  width: 0.5px;
+  height: 32px;
+  }
+  
   .hero--poster .hero__intro {
     max-width: 760px;
     margin: 0 auto;
@@ -360,13 +364,6 @@
     justify-content: center;
   }
 
-  .hero__actions {
-    margin-top: 36px;
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
 
   @media (max-width: 720px) {
     .hero--poster { padding: 36px 0 48px; }
