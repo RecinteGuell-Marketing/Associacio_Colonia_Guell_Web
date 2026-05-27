@@ -262,9 +262,9 @@
   letter-spacing: 0;
   text-transform: none;
   color: var(--ink);
-  margin-bottom: 36px;
+  margin-bottom: 30px;
   }
-  
+
   .ornament {
     display: flex;
     align-items: center;
