@@ -925,9 +925,9 @@
       <div id="empresa-filters" style="display: flex; gap: 8px; flex-wrap: wrap; padding-bottom: 24px; border-bottom: 0.5px solid var(--rule);">
         <button class="btn btn--small empresa-filter active" data-sector="all" style="background: var(--ink); color: var(--bg);">Tots els sectors</button>
         <button class="btn btn--ghost btn--small empresa-filter" data-sector="industria">Indústria</button>
-        <button class="btn btn--ghost btn--small empresa-filter" data-sector="tallers">Tallers d'oficis</button>
-        <button class="btn btn--ghost btn--small empresa-filter" data-sector="logistica">Logística</button>
         <button class="btn btn--ghost btn--small empresa-filter" data-sector="serveis">Serveis tècnics</button>
+        <button class="btn btn--ghost btn--small empresa-filter" data-sector="logistica">Logística</button>
+        <button class="btn btn--ghost btn--small empresa-filter" data-sector="tallers">Tallers d'oficis</button>
         <button class="btn btn--ghost btn--small empresa-filter" data-sector="creativa">Creativa i disseny</button>
       </div>
       <p style="font-size: 12px; color: var(--muted); margin-top: 16px; font-style: italic;">Els registres d'aquesta maqueta són il·lustratius. El directori real es construirà amb la informació facilitada per cada empresa.</p>
@@ -945,11 +945,25 @@
           <p style="font-size: 12px; color: var(--ink-soft);">Nau 4 · ext. 142</p>
         </div>
 
-        <div class="card card--tight empresa-card" data-sector="tallers">
-          <p class="eyebrow eyebrow--muted" style="margin-bottom: 10px;">Tallers d'oficis · fusta</p>
-          <h3 style="font-family: var(--serif); font-size: 22px; font-weight: 500; margin-bottom: 8px;">Taller B</h3>
-          <p style="font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 14px;">Fusteria i mobiliari a mida per a particulars i interioristes.</p>
-          <p style="font-size: 12px; color: var(--ink-soft);">Nau 7 · ext. 207</p>
+        <div class="card card--tight empresa-card" data-sector="industria">
+          <p class="eyebrow eyebrow--muted" style="margin-bottom: 10px;">Indústria · alimentació</p>
+          <h3 style="font-family: var(--serif); font-size: 22px; font-weight: 500; margin-bottom: 8px;">Empresa F</h3>
+          <p style="font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 14px;">Producció artesanal i envasat de productes alimentaris.</p>
+          <p style="font-size: 12px; color: var(--ink-soft);">Nau 8 · ext. 218</p>
+        </div>
+        
+        <div class="card card--tight empresa-card" data-sector="industria">
+          <p class="eyebrow eyebrow--muted" style="margin-bottom: 10px;">Indústria · Fotònica Integrada, Tecnologies d’espai</p>
+          <h3 style="font-family: var(--serif); font-size: 22px; font-weight: 500; margin-bottom: 8px;">OrbitHub S.L.</h3>
+          <p style="font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 14px;">Plataforma d’infraestructura d’R+D per al desenvolupament de fotònica integrada i tecnologies d’espai.</p>
+          <p style="font-size: 12px; color: var(--ink-soft);">Nau J01 · dep. 61</p>
+        </div>
+        
+        <div class="card card--tight empresa-card" data-sector="serveis">
+          <p class="eyebrow eyebrow--muted" style="margin-bottom: 10px;">Serveis tècnics</p>
+          <h3 style="font-family: var(--serif); font-size: 22px; font-weight: 500; margin-bottom: 8px;">Empresa de serveis E</h3>
+          <p style="font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 14px;">Instal·lacions elèctriques i automatització industrial.</p>
+          <p style="font-size: 12px; color: var(--ink-soft);">Nau 9 · ext. 245</p>
         </div>
 
         <div class="card card--tight empresa-card" data-sector="logistica">
@@ -959,27 +973,6 @@
           <p style="font-size: 12px; color: var(--ink-soft);">Nau 11 · ext. 311</p>
         </div>
 
-        <div class="card card--tight empresa-card" data-sector="creativa">
-          <p class="eyebrow eyebrow--muted" style="margin-bottom: 10px;">Creativa · disseny</p>
-          <h3 style="font-family: var(--serif); font-size: 22px; font-weight: 500; margin-bottom: 8px;">Estudi D</h3>
-          <p style="font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 14px;">Estudi d'arquitectura i disseny industrial.</p>
-          <p style="font-size: 12px; color: var(--ink-soft);">Nau 5, planta 1 · ext. 158</p>
-        </div>
-
-        <div class="card card--tight empresa-card" data-sector="serveis">
-          <p class="eyebrow eyebrow--muted" style="margin-bottom: 10px;">Serveis tècnics</p>
-          <h3 style="font-family: var(--serif); font-size: 22px; font-weight: 500; margin-bottom: 8px;">Empresa de serveis E</h3>
-          <p style="font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 14px;">Instal·lacions elèctriques i automatització industrial.</p>
-          <p style="font-size: 12px; color: var(--ink-soft);">Nau 9 · ext. 245</p>
-        </div>
-
-        <div class="card card--tight empresa-card" data-sector="industria">
-          <p class="eyebrow eyebrow--muted" style="margin-bottom: 10px;">Indústria · alimentació</p>
-          <h3 style="font-family: var(--serif); font-size: 22px; font-weight: 500; margin-bottom: 8px;">Empresa F</h3>
-          <p style="font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 14px;">Producció artesanal i envasat de productes alimentaris.</p>
-          <p style="font-size: 12px; color: var(--ink-soft);">Nau 8 · ext. 218</p>
-        </div>
-
         <div class="card card--tight empresa-card" data-sector="tallers">
           <p class="eyebrow eyebrow--muted" style="margin-bottom: 10px;">Tallers d'oficis · ferro</p>
           <h3 style="font-family: var(--serif); font-size: 22px; font-weight: 500; margin-bottom: 8px;">Taller G</h3>
@@ -987,18 +980,25 @@
           <p style="font-size: 12px; color: var(--ink-soft);">Nau 3 · ext. 124</p>
         </div>
 
+        <div class="card card--tight empresa-card" data-sector="tallers">
+          <p class="eyebrow eyebrow--muted" style="margin-bottom: 10px;">Tallers d'oficis · fusta</p>
+          <h3 style="font-family: var(--serif); font-size: 22px; font-weight: 500; margin-bottom: 8px;">Taller B</h3>
+          <p style="font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 14px;">Fusteria i mobiliari a mida per a particulars i interioristes.</p>
+          <p style="font-size: 12px; color: var(--ink-soft);">Nau 7 · ext. 207</p>
+        </div>
+
+        <div class="card card--tight empresa-card" data-sector="creativa">
+          <p class="eyebrow eyebrow--muted" style="margin-bottom: 10px;">Creativa · disseny</p>
+          <h3 style="font-family: var(--serif); font-size: 22px; font-weight: 500; margin-bottom: 8px;">Estudi D</h3>
+          <p style="font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 14px;">Estudi d'arquitectura i disseny industrial.</p>
+          <p style="font-size: 12px; color: var(--ink-soft);">Nau 5, planta 1 · ext. 158</p>
+        </div>
+
         <div class="card card--tight empresa-card" data-sector="creativa">
           <p class="eyebrow eyebrow--muted" style="margin-bottom: 10px;">Creativa · audiovisual</p>
           <h3 style="font-family: var(--serif); font-size: 22px; font-weight: 500; margin-bottom: 8px;">Estudi H</h3>
           <p style="font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 14px;">Plató fotogràfic i de vídeo, lloguer d'espais creatius.</p>
           <p style="font-size: 12px; color: var(--ink-soft);">Nau 6 · ext. 187</p>
-        </div>
-
-        <div class="card card--tight empresa-card" data-sector="industria">
-          <p class="eyebrow eyebrow--muted" style="margin-bottom: 10px;">Indústria · Fotònica Integrada, Tecnologies d’espai</p>
-          <h3 style="font-family: var(--serif); font-size: 22px; font-weight: 500; margin-bottom: 8px;">OrbitHub S.L.</h3>
-          <p style="font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 14px;">Plataforma d’infraestructura d’R+D per al desenvolupament de fotònica integrada i tecnologies d’espai.</p>
-          <p style="font-size: 12px; color: var(--ink-soft);">Nau J01 · dep. 61</p>
         </div>
 
       </div>
