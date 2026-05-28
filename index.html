@@ -567,14 +567,14 @@
   <!-- Filters -->
   <section class="section--tight">
     <div class="container">
-      <div style="display: flex; gap: 8px; flex-wrap: wrap; padding-bottom: 24px; border-bottom: 0.5px solid var(--rule);">
-        <button class="btn btn--small" style="background: var(--ink); color: var(--bg);">Totes</button>
-        <button class="btn btn--ghost btn--small">Urbanisme</button>
-        <button class="btn btn--ghost btn--small">Junta</button>
-        <button class="btn btn--ghost btn--small">Manteniment</button>
-        <button class="btn btn--ghost btn--small">Patrimoni</button>
-        <button class="btn btn--ghost btn--small">Empreses</button>
-        <button class="btn btn--ghost btn--small">Cultura</button>
+      <div id="noticies-filters" style="display: flex; gap: 8px; flex-wrap: wrap; padding-bottom: 24px; border-bottom: 0.5px solid var(--rule);">
+        <button class="btn btn--small noticia-filter active" data-category="all" style="background: var(--ink); color: var(--bg);">Totes</button>
+        <button class="btn btn--ghost btn--small noticia-filter" data-category="urbanisme">Urbanisme</button>
+        <button class="btn btn--ghost btn--small noticia-filter" data-category="junta">Junta</button>
+        <button class="btn btn--ghost btn--small noticia-filter" data-category="manteniment">Manteniment</button>
+        <button class="btn btn--ghost btn--small noticia-filter" data-category="patrimoni">Patrimoni</button>
+        <button class="btn btn--ghost btn--small noticia-filter" data-category="empreses">Empreses</button>
+        <button class="btn btn--ghost btn--small noticia-filter" data-category="cultura">Cultura</button>
       </div>
     </div>
   </section>
@@ -583,7 +583,7 @@
     <div class="container">
       <div class="news-list">
 
-        <a class="news-item" href="#noticia-mppgm" data-page="noticia-mppgm">
+        <a class="news-item noticia-card" data-category="urbanisme" href="#noticia-mppgm" data-page="noticia-mppgm">
           <span class="news-item__date">12 abr 2026</span>
           <div>
             <h3 class="news-item__title">L'Associació entra al Grup Motor de la Modificació puntual del PGM</h3>
@@ -592,7 +592,7 @@
           <span class="news-item__category">Urbanisme</span>
         </a>
 
-        <a class="news-item" href="#noticies" data-page="noticies">
+        <a class="news-item noticia-card" data-category="urbanisme" href="#noticies" data-page="noticies">
           <span class="news-item__date">2 abr 2026</span>
           <div>
             <h3 class="news-item__title">Sol·licituds formals d'informació a cinc organismes públics</h3>
@@ -601,7 +601,7 @@
           <span class="news-item__category">Urbanisme</span>
         </a>
 
-        <a class="news-item" href="#noticies" data-page="noticies">
+        <a class="news-item noticia-card" data-category="junta" href="#noticies" data-page="noticies">
           <span class="news-item__date">28 mar 2026</span>
           <div>
             <h3 class="news-item__title">Constitució de la nova Junta Directiva</h3>
@@ -610,7 +610,7 @@
           <span class="news-item__category">Junta</span>
         </a>
 
-        <a class="news-item" href="#noticies" data-page="noticies">
+        <a class="news-item noticia-card" data-category="manteniment" href="#noticies" data-page="noticies">
           <span class="news-item__date">19 mar 2026</span>
           <div>
             <h3 class="news-item__title">Calendari de manteniments del 2n trimestre</h3>
@@ -619,7 +619,7 @@
           <span class="news-item__category">Manteniment</span>
         </a>
 
-        <a class="news-item" href="#noticies" data-page="noticies">
+        <a class="news-item noticia-card" data-category="patrimoni" href="#noticies" data-page="noticies">
           <span class="news-item__date">7 mar 2026</span>
           <div>
             <h3 class="news-item__title">Reflexions sobre el mur perimetral del Recinte</h3>
@@ -628,7 +628,7 @@
           <span class="news-item__category">Patrimoni</span>
         </a>
 
-        <a class="news-item" href="#noticies" data-page="noticies">
+        <a class="news-item noticia-card" data-category="junta" href="#noticies" data-page="noticies">
           <span class="news-item__date">25 feb 2026</span>
           <div>
             <h3 class="news-item__title">Configuració de la nova plataforma operativa de Junta</h3>
@@ -637,7 +637,7 @@
           <span class="news-item__category">Junta</span>
         </a>
 
-        <a class="news-item" href="#noticies" data-page="noticies">
+        <a class="news-item noticia-card" data-category="cultura" href="#noticies" data-page="noticies">
           <span class="news-item__date">12 feb 2026</span>
           <div>
             <h3 class="news-item__title">Festa Modernista 2026: el Recinte hi participa</h3>
@@ -646,7 +646,7 @@
           <span class="news-item__category">Cultura</span>
         </a>
 
-        <a class="news-item" href="#noticies" data-page="noticies">
+        <a class="news-item noticia-card" data-category="manteniment" href="#noticies" data-page="noticies">
           <span class="news-item__date">28 gen 2026</span>
           <div>
             <h3 class="news-item__title">Renovació del contracte de seguretat i CCTV</h3>
@@ -1896,6 +1896,32 @@ document.querySelectorAll('.empresa-filter').forEach(button => {
   });
 });
 </script>
+
+
+<script>
+document.querySelectorAll('.noticia-filter').forEach(button => {
+  button.addEventListener('click', () => {
+    const category = button.dataset.category;
+    const noticiesSection = document.querySelector('#noticies');
+
+    noticiesSection.querySelectorAll('.noticia-filter').forEach(btn => {
+      btn.classList.remove('active');
+      btn.classList.add('btn--ghost');
+      btn.removeAttribute('style');
+    });
+
+    button.classList.add('active');
+    button.classList.remove('btn--ghost');
+    button.style.background = 'var(--ink)';
+    button.style.color = 'var(--bg)';
+
+    noticiesSection.querySelectorAll('.noticia-card').forEach(item => {
+      item.style.display = category === 'all' || item.dataset.category === category ? 'grid' : 'none';
+    });
+  });
+});
+</script>
+
 
 <script src="script.js"></script>
 </body>
