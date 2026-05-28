@@ -938,7 +938,7 @@
     <div class="container">
       <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
 
-        <div class="card card--tight">
+        <div class="card card--tight empresa-card" data-sector="industria">
           <p class="eyebrow eyebrow--muted" style="margin-bottom: 10px;">Indústria · metal·lúrgia</p>
           <h3 style="font-family: var(--serif); font-size: 22px; font-weight: 500; margin-bottom: 8px;">Empresa industrial A</h3>
           <p style="font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 14px;">Mecanització de precisió i fabricació de components.</p>
@@ -959,7 +959,7 @@
           <p style="font-size: 12px; color: var(--ink-soft);">Nau 11 · ext. 311</p>
         </div>
 
-        <div class="card card--tight">
+        <div class="card card--tight empresa-card" data-sector="creativa">
           <p class="eyebrow eyebrow--muted" style="margin-bottom: 10px;">Creativa · disseny</p>
           <h3 style="font-family: var(--serif); font-size: 22px; font-weight: 500; margin-bottom: 8px;">Estudi D</h3>
           <p style="font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 14px;">Estudi d'arquitectura i disseny industrial.</p>
@@ -980,14 +980,14 @@
           <p style="font-size: 12px; color: var(--ink-soft);">Nau 8 · ext. 218</p>
         </div>
 
-        <div class="card card--tight">
+        <div class="card card--tight empresa-card" data-sector="tallers">
           <p class="eyebrow eyebrow--muted" style="margin-bottom: 10px;">Tallers d'oficis · ferro</p>
           <h3 style="font-family: var(--serif); font-size: 22px; font-weight: 500; margin-bottom: 8px;">Taller G</h3>
           <p style="font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 14px;">Forja i ferreteria d'art per a restauració arquitectònica.</p>
           <p style="font-size: 12px; color: var(--ink-soft);">Nau 3 · ext. 124</p>
         </div>
 
-        <div class="card card--tight">
+        <div class="card card--tight empresa-card" data-sector="creativa">
           <p class="eyebrow eyebrow--muted" style="margin-bottom: 10px;">Creativa · audiovisual</p>
           <h3 style="font-family: var(--serif); font-size: 22px; font-weight: 500; margin-bottom: 8px;">Estudi H</h3>
           <p style="font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 14px;">Plató fotogràfic i de vídeo, lloguer d'espais creatius.</p>
@@ -1656,7 +1656,7 @@ document.querySelectorAll('.empresa-filter').forEach(button => {
     button.style.background = 'var(--ink)';
     button.style.color = 'var(--bg)';
 
-    empresesSection.querySelectorAll('.empresa-card').forEach(card => {
+    empresesSection.querySelectorAll('.card[data-sector]').forEach(card => {
       card.style.display = sector === 'all' || card.dataset.sector === sector ? 'block' : 'none';
     });
   });
