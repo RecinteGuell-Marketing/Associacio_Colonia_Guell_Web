@@ -922,13 +922,13 @@
   <!-- Filters -->
   <section class="section--tight">
     <div class="container">
-      <div style="display: flex; gap: 8px; flex-wrap: wrap; padding-bottom: 24px; border-bottom: 0.5px solid var(--rule);">
-        <button class="btn btn--small" style="background: var(--ink); color: var(--bg);">Tots els sectors</button>
-        <button class="btn btn--ghost btn--small">Indústria</button>
-        <button class="btn btn--ghost btn--small">Tallers d'oficis</button>
-        <button class="btn btn--ghost btn--small">Logística</button>
-        <button class="btn btn--ghost btn--small">Serveis tècnics</button>
-        <button class="btn btn--ghost btn--small">Creativa i disseny</button>
+      <div id="empresa-filters" style="display: flex; gap: 8px; flex-wrap: wrap; padding-bottom: 24px; border-bottom: 0.5px solid var(--rule);">
+        <button class="btn btn--small empresa-filter active" data-sector="all" style="background: var(--ink); color: var(--bg);">Tots els sectors</button>
+        <button class="btn btn--ghost btn--small empresa-filter" data-sector="industria">Indústria</button>
+        <button class="btn btn--ghost btn--small empresa-filter" data-sector="tallers">Tallers d'oficis</button>
+        <button class="btn btn--ghost btn--small empresa-filter" data-sector="logistica">Logística</button>
+        <button class="btn btn--ghost btn--small empresa-filter" data-sector="serveis">Serveis tècnics</button>
+        <button class="btn btn--ghost btn--small empresa-filter" data-sector="creativa">Creativa i disseny</button>
       </div>
       <p style="font-size: 12px; color: var(--muted); margin-top: 16px; font-style: italic;">Els registres d'aquesta maqueta són il·lustratius. El directori real es construirà amb la informació facilitada per cada empresa.</p>
     </div>
@@ -994,8 +994,8 @@
           <p style="font-size: 12px; color: var(--ink-soft);">Nau 6 · ext. 187</p>
         </div>
 
-        <div class="card card--tight">
-          <p class="eyebrow eyebrow--muted" style="margin-bottom: 10px;">Fotònica Integrada, Tecnologies d’espai</p>
+        <div class="card card--tight" data-sector="industria">
+          <p class="eyebrow eyebrow--muted" style="margin-bottom: 10px;">Fotònica Integrada i Tecnologies d’espai</p>
           <h3 style="font-family: var(--serif); font-size: 22px; font-weight: 500; margin-bottom: 8px;">OrbitHub S.L.</h3>
           <p style="font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 14px;">Plataforma d’infraestructura d’R+D per al desenvolupament de fotònica integrada i tecnologies d’espai.</p>
           <p style="font-size: 12px; color: var(--ink-soft);">Nau J01 · dep. 61</p>
