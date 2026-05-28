@@ -995,7 +995,7 @@
         </div>
 
         <div class="card card--tight" data-sector="industria">
-          <p class="eyebrow eyebrow--muted" style="margin-bottom: 10px;">Fotònica Integrada i Tecnologies d’espai</p>
+          <p class="eyebrow eyebrow--muted" style="margin-bottom: 10px;">Fotònica Integrada · Tecnologies d’espai</p>
           <h3 style="font-family: var(--serif); font-size: 22px; font-weight: 500; margin-bottom: 8px;">OrbitHub S.L.</h3>
           <p style="font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 14px;">Plataforma d’infraestructura d’R+D per al desenvolupament de fotònica integrada i tecnologies d’espai.</p>
           <p style="font-size: 12px; color: var(--ink-soft);">Nau J01 · dep. 61</p>
@@ -1638,6 +1638,30 @@
     </div>
   </div>
 </footer>
+
+<script>
+document.querySelectorAll('.empresa-filter').forEach(button => {
+  button.addEventListener('click', () => {
+    const sector = button.dataset.sector;
+    const empresesSection = document.querySelector('#empreses');
+
+    empresesSection.querySelectorAll('.empresa-filter').forEach(btn => {
+      btn.classList.remove('active');
+      btn.classList.add('btn--ghost');
+      btn.removeAttribute('style');
+    });
+
+    button.classList.add('active');
+    button.classList.remove('btn--ghost');
+    button.style.background = 'var(--ink)';
+    button.style.color = 'var(--bg)';
+
+    empresesSection.querySelectorAll('[data-sector]').forEach(card => {
+      card.style.display = sector === 'all' || card.dataset.sector === sector ? 'block' : 'none';
+    });
+  });
+});
+</script>
 
 <script src="script.js"></script>
 </body>
