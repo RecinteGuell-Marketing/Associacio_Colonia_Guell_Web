@@ -716,3 +716,16 @@
     .news-item__category { order: -1; }
     .site-footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
   }
+  
+.empresa-link,
+.empresa-link:hover,
+.empresa-link:visited,
+.empresa-link:active {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+.empresa-link * {
+  text-decoration: none !important;
+  color: inherit;
+}
