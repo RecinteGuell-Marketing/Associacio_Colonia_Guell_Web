@@ -1954,5 +1954,57 @@ document.querySelectorAll('.noticia-filter').forEach(button => {
 
 
 <script src="script.js"></script>
+
+<script>
+<script>
+(function () {
+  function goToPage(pageId, addHistory = true) {
+    const target = document.getElementById(pageId) || document.getElementById('inici');
+    if (!target) return;
+
+    document.querySelectorAll('.page').forEach(page => {
+      page.classList.remove('active');
+    });
+
+    target.classList.add('active');
+
+    document.querySelectorAll('[data-page]').forEach(link => {
+      link.classList.toggle('active', link.dataset.page === target.id);
+    });
+
+    if (addHistory && window.location.hash !== '#' + target.id) {
+      history.pushState({ page: target.id }, '', '#' + target.id);
+    }
+
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
+    const nav = document.getElementById('primary-nav');
+    const toggle = document.getElementById('menu-toggle');
+
+    if (nav) nav.classList.remove('open');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  document.addEventListener('click', function (event) {
+    const link = event.target.closest('[data-page]');
+    if (!link) return;
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
+
+    goToPage(link.dataset.page, true);
+  }, true);
+
+  window.addEventListener('popstate', function () {
+    const pageId = (window.location.hash || '#inici').replace('#', '');
+    goToPage(pageId, false);
+  });
+
+  const initialPage = (window.location.hash || '#inici').replace('#', '');
+  goToPage(initialPage, false);
+})();
+</script>
+</script>
+
 </body>
 </html>
