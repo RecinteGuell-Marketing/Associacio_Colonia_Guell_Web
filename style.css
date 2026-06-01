@@ -603,6 +603,10 @@
   object-position: center center;
 }
 
+.photo--gallery-clean::before {
+  display: none;
+}
+
 
   /* Breadcrumb */
   .breadcrumb {
