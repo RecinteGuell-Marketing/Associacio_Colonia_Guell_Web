@@ -703,6 +703,17 @@
     color: #756B5C;
   }
 
+  
+  /* Recinte productiu */
+.card[href] {
+  transition: all 0.2s ease;
+}
+
+.card[href]:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
   /* Draft banner */
   .draft-banner {
     background: var(--accent);
