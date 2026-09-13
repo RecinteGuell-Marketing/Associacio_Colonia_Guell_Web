@@ -1,4 +1,4 @@
-  function showPage(pageId) {
+  function showPage(pageId, addHistory = true) {
     const pages = document.querySelectorAll('.page');
     pages.forEach(p => p.classList.remove('active'));
     const target = document.getElementById(pageId);
@@ -11,12 +11,10 @@
     document.querySelectorAll('.nav a').forEach(a => {
       a.classList.toggle('active', a.dataset.page === pageId);
     });
-    if (history.replaceState) {
-      history.replaceState(null, '', '#' + pageId);
-    } else {
-      window.location.hash = pageId;
+    if (addHistory && window.location.hash !== '#' + pageId) {
+      history.pushState({ page: pageId }, '', '#' + pageId);
     }
-    window.scrollTo({ top: 0, behavior: 'instant' });
+    window.scrollTo({ top: 0, behavior: 'auto' });
     document.getElementById('primary-nav').classList.remove('open');
     document.getElementById('menu-toggle').setAttribute('aria-expanded', 'false');
   }
@@ -37,7 +35,12 @@
     });
   }
 
+  window.addEventListener('popstate', () => {
+  const pageId = (window.location.hash || '#inici').replace('#', '');
+  showPage(pageId, false);
+  });
+
   window.addEventListener('DOMContentLoaded', () => {
     const initial = (window.location.hash || '#inici').replace('#', '');
-    showPage(initial);
+    showPage(initial, false);
   });
