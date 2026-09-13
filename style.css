@@ -900,6 +900,12 @@
     .news-item__category { order: -1; }
     .site-footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
   }
+
+  @media (max-width: 560px) {
+    .tiles {
+      grid-template-columns: 1fr;
+    }
+  }
   
 .empresa-link,
 .empresa-link:hover,
