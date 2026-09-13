@@ -908,6 +908,9 @@
     .pillars {
       grid-template-columns: 1fr;
     }
+    .site-footer__grid {
+      grid-template-columns: 1fr;
+    }
   }
   
 .empresa-link,
