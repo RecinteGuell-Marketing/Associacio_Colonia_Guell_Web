@@ -761,10 +761,19 @@
     gap: 16px;
   }
 
+  .activity-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+  }
+
 
   /* Mobile */
   @media (max-width: 880px) {
     .company-grid {
+      grid-template-columns: 1fr;
+    }
+    .activity-grid {
       grid-template-columns: 1fr;
     }
     .site-header__inner { padding: 14px 20px; gap: 12px; }
