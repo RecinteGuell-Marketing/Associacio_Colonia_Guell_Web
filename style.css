@@ -833,6 +833,13 @@
     border: 0.5px solid var(--rule);
   }
 
+  .urbanism-highlight {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: center;
+  }
+
   /* Mobile */
   @media (max-width: 880px) {
     .company-grid {
@@ -873,6 +880,10 @@
       grid-template-columns: 1fr;
       gap: 28px;
       padding: 32px 24px;
+    }
+    .urbanism-highlight {
+      grid-template-columns: 1fr;
+      align-items: start;
     }
     .site-header__inner { padding: 14px 20px; gap: 12px; }
     .nav { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: var(--bg); padding: 20px; gap: 18px; border-bottom: 0.5px solid var(--rule); }
