@@ -905,6 +905,9 @@
     .tiles {
       grid-template-columns: 1fr;
     }
+    .pillars {
+      grid-template-columns: 1fr;
+    }
   }
   
 .empresa-link,
