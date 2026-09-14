@@ -44,3 +44,52 @@
     const initial = (window.location.hash || '#inici').replace('#', '');
     showPage(initial, false);
   });
+
+  const mapConsentKey = 'recinteguell-google-maps-consent';
+
+const googleMap = document.getElementById('google-map');
+const mapPlaceholder = document.getElementById('map-placeholder');
+const acceptMapButton = document.getElementById('accept-map-cookies');
+const rejectMapButton = document.getElementById('reject-map-cookies');
+const resetConsentButton = document.getElementById('reset-cookie-consent');
+
+function loadGoogleMap() {
+  if (!googleMap || !mapPlaceholder) return;
+
+  if (!googleMap.src) {
+    googleMap.src = googleMap.dataset.src;
+  }
+
+  googleMap.hidden = false;
+  mapPlaceholder.hidden = true;
+}
+
+function blockGoogleMap() {
+  if (!googleMap || !mapPlaceholder) return;
+
+  googleMap.removeAttribute('src');
+  googleMap.hidden = true;
+  mapPlaceholder.hidden = false;
+}
+
+acceptMapButton?.addEventListener('click', () => {
+  localStorage.setItem(mapConsentKey, 'accepted');
+  loadGoogleMap();
+});
+
+rejectMapButton?.addEventListener('click', () => {
+  localStorage.setItem(mapConsentKey, 'rejected');
+  blockGoogleMap();
+});
+
+resetConsentButton?.addEventListener('click', () => {
+  localStorage.removeItem(mapConsentKey);
+  blockGoogleMap();
+  alert('S’ha retirat el consentiment per carregar Google Maps.');
+});
+
+if (localStorage.getItem(mapConsentKey) === 'accepted') {
+  loadGoogleMap();
+} else {
+  blockGoogleMap();
+}
