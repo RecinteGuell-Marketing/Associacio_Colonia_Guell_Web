@@ -1436,15 +1436,40 @@
   <hr class="rule">
 
   <!-- Mapa -->
-  <iframe
-    src="https://www.google.com/maps?q=Recinte%20Industrial%20Col%C3%B2nia%20G%C3%BCell%2C%20Santa%20Coloma%20de%20Cervell%C3%B3&output=embed"
-    width="100%"
-    height="420"
-    style="border: 0; display: block;"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
+  <!-- Mapa amb consentiment -->
+  <div id="map-consent">
+
+    <div id="map-placeholder" class="map-placeholder" aria-live="polite">
+      <p>
+        Per mostrar el mapa cal carregar contingut extern de Google Maps.
+      </p>
+
+      <div class="map-placeholder__actions">
+        <button id="accept-map-cookies" class="btn btn--ghost" type="button">
+          Acceptar
+        </button>
+
+        <button id="reject-map-cookies" class="btn btn--ghost" type="button">
+          Rebutjar
+        </button>
+      </div>
+
+      <a href="#cookies" data-page="cookies">Consultar la política de cookies</a>
+    </div>
+
+    <iframe
+      id="google-map"
+      data-src="https://www.google.com/maps?q=Recinte%20Industrial%20Col%C3%B2nia%20G%C3%BCell%2C%20Santa%20Coloma%20de%20Cervell%C3%B3&output=embed"
+      width="100%"
+      height="420"
+      style="border: 0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      hidden>
+    </iframe>
+
+  </div>
 
 </section>
 
